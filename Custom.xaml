@@ -228,12 +228,13 @@
         <StackPanel Margin="0,10,0,5" Orientation="Horizontal" />
             <TextBlock Text="鸣谢：" />
             <TextBlock Text="NaOH HaN" />
-        <StackPanel Margin="0,10,0,5" Orientation="Horizontal" />
+            <TextBlock Text="MoranStar" />
+        <StackPanel Margin="0,8,0,5" Orientation="Horizontal" />
             <TextBlock Text="本主页使用了以下开源项目的部分源码" />
-            <local:MyTextButton Margin="2"
+            <local:MyTextButton Margin="0,10,0,0"
                         Text="PCL2新闻主页"
                         EventType="打开网页" EventData="https://github.com/Light-Beacon/PCL2-NewsHomepage" />
-            <local:MyTextButton Margin="2"
+            <local:MyTextButton Margin="0,2,0,0"
                         Text="Simple Mainpage"
                         EventType="打开网页" EventData="https://github.com/MFn233/PCL-Mainpage" />
         <Border Height="20500" Background="{DynamicResource ColorBrush7}" Opacity="0.3" Margin="-40,10,0,0">
