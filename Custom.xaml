@@ -38,9 +38,15 @@
         <!--回声洞GroupBox-->
         <StackPanel>
             <GroupBox Header="回声洞" BorderBrush="{DynamicResource ColorBrush3}">
-                <TextBlock Margin="10,5,0,8" TextWrapping="Wrap" HorizontalAlignment="Left" 
-                            Foreground="{DynamicResource ColorBrush1}" 
+                <TextBlock Margin="10,5,0,8" TextWrapping="Wrap" HorizontalAlignment="Left" Foreground="{DynamicResource ColorBrush1}" 
                             Text="{cave}" />
+            </GroupBox>
+        </StackPanel>
+        <!--你知道吗Hint    如果不需要，从此处开始，一直删除直至结束标记-->
+        <StackPanel>
+            <GroupBox Header="你知道吗" BorderBrush="{DynamicResource ColorBrush3}">
+                <TextBlock Margin="10,5,0,8" TextWrapping="Wrap" HorizontalAlignment="Left" Foreground="{DynamicResource ColorBrush1}"
+                            Text="{hint}" />
             </GroupBox>
         </StackPanel>
         <!--新闻、刷新按钮-->
@@ -50,7 +56,7 @@
                     <ColumnDefinition Width="0.3*" />
                     <ColumnDefinition Width="0.5*" />
             </Grid.ColumnDefinitions>
-                <local:MyTextButton Grid.Column="1" Height="19.5" Margin="0,5,0,0"
+                <local:MyTextButton Grid.Column="1" Height="19.5" Margin="0,12,0,0"
                         Text="📰"
                         ToolTip="Minecraft新闻(作者：最亮的信标)" 
                         EventData="https://news.bugjump.net/News.json" EventType="打开帮助" 
@@ -65,10 +71,24 @@
     </StackPanel>
 </local:MyCard>
 
+<!--如果需要，从本句开始，删除直至结束标记-->
 <local:MyCard Title="随机二次元图片" Margin="0,0,0,15" CanSwap="True" IsSwaped="True" >
     <StackPanel Margin="25,40,23,15">
         <local:MyHint Margin="0,8,0,2" IsWarn="False" Text="图源:LoliAPI" />
-        <local:MyHint Margin="0,4,0,8" IsWarn="True" Text="[警告]根据 龙猫在简单主页Repo的Issue 反馈,当前Api可能刷新出R18图片&#xA;在将来,可能会弃用改Api" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <local:MyHint Margin="0,4,0,8" IsWarn="True" Grid.Column="0"
+                        Text="[警告]根据 龙猫在简单主页Repo的Issue 反馈,当前Api可能刷新出R18图片&#xA;在将来,可能会弃用该Api | 你也可以选择在主页文件手动删除本卡片" />
+            <local:MyIconButton Grid.Column="1" LogoScale="1.2" 
+                    Logo="M13.5,4A1.5,1.5 0 0,0 12,5.5A1.5,1.5 0 0,0 13.5,7A1.5,1.5 0 0,0 15,5.5A1.5,1.5 0 0,0 13.5,4M13.14,8.77C11.95,8.87 8.7,11.46 8.7,11.46C8.5,11.61 8.56,11.6 8.72,11.88C8.88,12.15 8.86,12.17 9.05,12.04C9.25,11.91 9.58,11.7 10.13,11.36C12.25,10 10.47,13.14 9.56,18.43C9.2,21.05 11.56,19.7 12.17,19.3C12.77,18.91 14.38,17.8 14.54,17.69C14.76,17.54 14.6,17.42 14.43,17.17C14.31,17 14.19,17.12 14.19,17.12C13.54,17.55 12.35,18.45 12.19,17.88C12,17.31 13.22,13.4 13.89,10.71C14,10.07 14.3,8.67 13.14,8.77Z"
+                    Height="21" Margin="2,0,0,20"
+                    ToolTip="前往这条Issue" 
+                    EventData="https://github.com/MFn233/PCL-Mainpage/issues/2" EventType="打开网页" 
+                    VerticalAlignment="Bottom"/>
+        </Grid>
         <Image HorizontalAlignment="Center" Source="https://www.loliapi.com/acg/" />
         <local:MyListItem Margin="-5,2,-5,8"
                     Logo="https://cdn.iloli.love/img/liico.webp"
@@ -83,6 +103,7 @@
         <local:MyHint Margin="0,0,0,0" Text="因技术性问题，刷新图片 将通过 重启PCL2 的方式实现！" />
     </StackPanel>
 </local:MyCard>
+<!--结束标记-->
 
 <local:MyCard Title="百宝箱" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
     <StackPanel Margin="25,40,23,15">
@@ -157,6 +178,8 @@
     </StackPanel>
 </local:MyCard>
 
+<!--开发选项，移除下方注释标记启用-->
+<!--
 <local:MyCard Title="开发选项" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
     <StackPanel Margin="25,40,23,15">
         <local:MyHint Margin="0,0,0,5" Text="更改主页xaml后记得保存" />
@@ -180,13 +203,15 @@
         </StackPanel>
     </StackPanel>
 </local:MyCard>
+-->
 
+<!--关于-->
 <StackPanel>
     <Border Background="#A0FFFFFF" Height="20800" Margin="-25,10,-25,-20500" BorderThickness="0,2,0,0" BorderBrush="#AAAAAAAA">
         <StackPanel Margin="40,15,0,10">
         <TextBlock Text="PCL2 NaCl主页" FontSize="16" Margin="0,5,5,5" />
         <TextBlock Text="制作 | NaOH_HaN" />
-        <TextBlock Text="版本 | Alpha 0.7" />
+        <TextBlock Text="版本 | Pre-Release 0.3" />
         <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
             <TextBlock Text="Github: " />
             <local:MyTextButton Margin="2" 
