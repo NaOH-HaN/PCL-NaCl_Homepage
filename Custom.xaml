@@ -214,7 +214,7 @@
         <TextBlock Text="版本 | Pre-Release 0.4" />
         <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
             <TextBlock Text="Github: " />
-            <local:MyTextButton Margin="2" 
+            <local:MyTextButton Margin="0,0,0,0" 
                         Text="https://github.com/NaOH-HaN/PCL-NaCl_Homepage" 
                         EventType="打开网页" EventData="https://github.com/NaOH-HaN/PCL-NaCl_Homepage" 
                         ToolTip="点击打开Github" />
