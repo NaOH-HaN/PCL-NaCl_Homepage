@@ -142,6 +142,7 @@
 
 <local:MyCard Title="LittleSkin登录" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
     <StackPanel Margin="25,40,23,15">
+                    <local:MyHint Margin="0,0,0,8"
                     Text="服务器必须启用 在线模式(online-mode) / 使用 authlib-injector 才可以使用皮肤&#xA;需要安装 Custom Skin Loader 模组" />
         <local:MyListItem  Margin="-5,2,-5,8"
                     Logo="https://littleskin.cn/favicon.png"
