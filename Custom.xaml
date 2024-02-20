@@ -1,0 +1,277 @@
+﻿<local:MyCard Title="快速操作" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <!--快速启动-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1.3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <!-- 为按钮添加 Grid.Column 属性，删除 Width 与 HorizontalAlignment 属性 -->
+            <local:MyButton Grid.Column="1" Margin="0,8,10,0" Height="35" Padding="13,0,13,0" ColorType="Highlight"
+                        Text="1.20.1" EventType="启动游戏" EventData="1.20.1-Fabric 0.14.21" />
+            <local:MyButton Grid.Column="0" Margin="0,8,10,0" Height="35" Padding="13,0,13,0" 
+                        Text="Memories" EventType="启动游戏" EventData="1.12.2-Forge_Memories" />
+            <local:MyButton Grid.Column="2" Margin="0,8,10,0" Height="35" Padding="13,0,13,0" 
+                        Text="Pakour" EventType="启动游戏" EventData="1.12.2-Forge_Pakour" />
+        </Grid>
+        <!--PDM下载菜单-->
+        <local:MyCard Margin="0,6,0,6" CanSwap="True" IsSwaped="True" Title="Pro Download Manager | 添加下载任务" >
+            <StackPanel Margin="0,10,0,10">
+                <local:MyHint Margin="5,25,5,5" IsWarn="True" 
+                            Text="链接必须为以http://或https://开头的网址，部分网址可能无法下载" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="0.8*" />
+                    </Grid.ColumnDefinitions>
+                    <local:MyTextBox Grid.Column="0" Margin="8,0,0,0" Name="TextBox_DownloadLink" Height="30" />
+                    <local:MyButton Grid.Column="1" Margin="5,0,8,0" Height="30" Padding="2,0,2,0" ColorType="Highlight" 
+                                Text="开始下载"
+                                EventType="下载文件" EventData="{Binding ElementName=TextBox_DownloadLink,Path=Text}" />
+                </Grid>
+            </StackPanel>
+        </local:MyCard>
+        <!--回声洞GroupBox-->
+        <StackPanel>
+            <GroupBox Header="回声洞" BorderBrush="{DynamicResource ColorBrush3}">
+                <TextBlock Margin="10,5,0,8" TextWrapping="Wrap" HorizontalAlignment="Left" 
+                            Foreground="{DynamicResource ColorBrush1}" 
+                            Text="{cave}" />
+            </GroupBox>
+        </StackPanel>
+        <!--新闻、刷新按钮-->
+        <Grid >
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+                <local:MyTextButton Grid.Column="1" Height="19.5" Margin="0,5,0,0"
+                        Text="📰"
+                        ToolTip="Minecraft新闻(作者：最亮的信标)" 
+                        EventData="https://news.bugjump.net/News.json" EventType="打开帮助" 
+                        VerticalAlignment="Bottom"/>
+                <local:MyIconButton Grid.Column="2" LogoScale="1.2" 
+                    Logo="M256.455,8C322.724,8.119,382.892,34.233,427.314,76.685L463.029,40.97C478.149,25.851,504,36.559,504,57.941L504,192C504,205.255,493.255,216,480,216L345.941,216C324.559,216,313.851,190.149,328.97,175.029L370.72,133.279C339.856,104.38 299.919,88.372 257.49,88.006 165.092,87.208 87.207,161.983 88.0059999999999,257.448 88.764,348.009 162.184,424 256,424 297.127,424 335.997,409.322 366.629,382.444 371.372,378.283 378.535,378.536 382.997,382.997L422.659,422.659C427.531,427.531 427.29,435.474 422.177,440.092 378.202,479.813 319.926,504 256,504 119.034,504 8.001,392.967 8,256.002 7.999,119.193 119.646,7.755 256.455,8z"
+                        Height="21" Margin="0,5,0,0"
+                        ToolTip="点此刷新" 
+                        EventData="回声洞" EventType="刷新主页" 
+                        VerticalAlignment="Bottom"/>
+        </Grid>
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="随机二次元图片" Margin="0,0,0,15" CanSwap="True" IsSwaped="True" >
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Margin="0,8,0,2" IsWarn="False" Text="图源:LoliAPI" />
+        <local:MyHint Margin="0,4,0,8" IsWarn="True" Text="[警告]根据 龙猫在简单主页Repo的Issue 反馈,当前Api可能刷新出R18图片&#xA;在将来,可能会弃用改Api" />
+        <Image HorizontalAlignment="Center" Source="https://www.loliapi.com/acg/" />
+        <local:MyListItem Margin="-5,2,-5,8"
+                    Logo="https://cdn.iloli.love/img/liico.webp"
+                    Title="LoliAPI"
+                    Info="这里是LoliAPI,提供免费api服务的站点之一"
+                    EventType="打开网页" EventData="https://www.loliapi.com/" Type="Clickable" />
+        <local:MyListItem Margin="-5,2,-5,8"
+                    Logo="pack://application:,,,/images/Blocks/CommandBlock.png"
+                    Title="刷新图片"
+                    Info="该操作将通过 重启PCL2 的方式刷新图片"
+                    EventType="打开文件" EventData="D:\PDFelement\Minecraft\Launcher\PCL\RestartPCL2.vbs" Type="Clickable" />
+        <local:MyHint Margin="0,0,0,0" Text="因技术性问题，刷新图片 将通过 重启PCL2 的方式实现！" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="百宝箱" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1.6*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <!-- 为按钮添加 Grid.Column 属性，删除 Width 与 HorizontalAlignment 属性 -->
+            <local:MyButton Grid.Column="0" Margin="0,0,10,0" Height="35" 
+                        Text="内存优化" EventType="内存优化" />
+            <local:MyButton Grid.Column="1" Margin="0,0,10,0" Height="35" ColorType="Highlight"
+                        Text="今日人品" EventType="今日人品" />
+            <local:MyButton Grid.Column="2" Margin="0,0,10,0" Height="35" 
+                        Text="清理垃圾" EventType="清理垃圾" />
+        </Grid>
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="快捷访问" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyListItem  Margin="-5,2,-5,8"
+                    Logo="https://littleskin.cn/favicon.png"
+                    Title="LittleSkin"
+                    Info="快速、可靠的公益 Minecraft 皮肤站" 
+                    EventType="打开网页" EventData="https://littleskin.cn/" Type="Clickable" />
+        <local:MyListItem  Margin="-5,0,-5,8"
+                    Logo="https://static.wikia.nocookie.net/minecraft_zh_gamepedia/images/e/e6/Site-logo.png/revision/latest?cb=20211229054835" 
+                    Title="Minecraft Wiki"
+                    Info="完全公开、可自由编辑的Wiki，中文Minecraft Wiki。这里致力于收集一切和Minecraft有关的信息。" 
+                    EventType="打开网页" EventData="https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki" Type="Clickable" />
+        <local:MyListItem  Margin="-5,0,-5,8"
+                    Logo="https://www.mcmod.cn/images/favicon.ico"
+                    Title="MC Mod百科"
+                    Info="我的世界MOD百科，提供Minecraft(我的世界)MOD(模组)物品资料介绍教程攻略和MOD下载。" 
+                    EventType="打开网页" EventData="https://www.mcmod.cn/" Type="Clickable" />
+        <local:MyHint Margin="0,-4,0,2" IsWarn="False" 
+                    Text="由于MCBBS已关站,已经移除了指向MCBBS的链接" />
+        <!--<local:MyListItem  Margin="-5,0,-5,8"
+                    Logo="https://www.mcbbs.net/template/mcbbs/image/logo_sc.png    "
+                    Title="MCBBS"
+                    Info="最大的《Minecraft》（我的世界）玩家创造、研究、交流学习和分享的专业中文社交平台！" 
+                    EventType="打开网页" EventData="https://www.mcbbs.net/" Type="Clickable" />-->
+        <local:MyListItem  Margin="-5,0,-5,8" 
+                    Logo="https://www.bilibili.com/favicon.ico?v=1"
+                    Title="BiliBili"
+                    Info="哔哩哔哩（bilibili.com)是国内知名的视频弹幕网站，这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主。大家可以在这里找到许多欢乐。" 
+                    EventType="打开网页" EventData="https://www.bilibili.com/" Type="Clickable" />
+        <local:MyListItem Margin="-5,2,-5,8"
+                    Logo="https://cdn.iloli.love/img/liico.webp"
+                    Title="LoliAPI"
+                    Info="这里是LoliAPI,提供免费api服务的站点之一"
+                    EventType="打开网页" EventData="https://www.loliapi.com/" Type="Clickable" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="LittleSkin登录" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Margin="0,0,0,2" IsWarn="False" 
+                    Text="LittleSkin的 Yggdrasil API 认证服务器地址：https://littleskin.cn/api/yggdrasil" />
+        <local:MyHint 
+                    Text="服务器必须启用 在线模式(online-mode) / 使用 authlib-injector 才可以使用皮肤&#xA;需要安装 Custom Skin Loader 模组" />
+        <local:MyListItem  Margin="-5,2,-5,8"
+                    Logo="https://littleskin.cn/favicon.png"
+                    Title="LittleSkin"
+                    Info="快速、可靠的公益 Minecraft 皮肤站" 
+                    EventType="打开网页" EventData="https://littleskin.cn/" Type="Clickable" />
+        <local:MyListItem Margin="-5,2,-5,8"
+                    Logo="pack://application:,,,/images/Blocks/RedstoneLampOn.png"
+                    Title="复制 LittleSkin 的 Yggdrasil API 认证服务器地址"
+                    Info="https://littleskin.cn/api/yggdrasil"
+                    EventType="复制文本" EventData="https://littleskin.cn/api/yggdrasil" Type="Clickable" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="开发选项" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Margin="0,0,0,5" Text="更改主页xaml后记得保存" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="5*" MinWidth="200"/>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+            <local:MyButton Grid.Column="1" Margin="0,4,10,0" Height="35" Padding="13,0,13,0" ColorType="Highlight"
+                        Text="刷新主页" 
+                        EventType="刷新主页"  />
+            <local:MyButton Grid.Column="0" Margin="0,4,10,0" Height="35" Padding="13,0,13,0"
+                        Text="打开主页布局文件" 
+                        EventType="打开文件" EventData="D:\PDFelement\Minecraft\Launcher\PCL\Custom.xaml" />
+            <local:MyButton Grid.Column="2" Margin="0,4,10,0" Height="35" Padding="13,0,13,0"
+                        Text="打开主页布局教学文件" 
+                        EventType="打开文件" EventData="D:\PDFelement\Minecraft\Launcher\PCL\CustomLearn.xaml" />
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+
+<StackPanel>
+    <Border Background="#A0FFFFFF" Height="20720" Margin="-25,10,-25,-20500" BorderThickness="0,2,0,0" BorderBrush="#AAAAAAAA">
+        <StackPanel Margin="40,15,0,10">
+            <TextBlock Text="PCL2 NaCl主页" FontSize="16" Margin="0,5,5,5" />
+            <TextBlock Text="制作 | NaOH_HaN" />
+            <TextBlock Text="版本 | Alpha 0.7"
+        <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+            <TextBlock Text="Github: " />
+            <local:MyTextButton Margin="2" 
+                        Text="https://github.com/NaOH-HaN/PCL-NaCl_Homepage" 
+                        EventType="打开网页" EventData="https://github.com/NaOH-HaN/PCL-NaCl_Homepage" 
+                        ToolTip="点击打开Github" />
+        </StackPanel>
+        <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+            <TextBlock Text="无特殊声明本主页采用 " />
+            <local:MyTextButton Text="CC BY-NC-SA 4.0" 
+                        EventType="打开网页" EventData="https://creativecommons.org/licenses/by-nc-sa/4.0/ " />
+            <TextBlock Text=" 授权。" />
+        </StackPanel>
+        <StackPanel Margin="0,10,0,5" Orientation="Horizontal" />
+            <TextBlock Text="鸣谢：" />
+        <Border Height="20500" Background="{DynamicResource ColorBrush7}" Opacity="0.3" Margin="-40,10,0,0">
+            <StackPanel>
+                <Grid Margin="0,7,0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="100">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="1*">
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="0" />
+                <TextBlock Text="到  底  啦" HorizontalAlignment="Center" FontSize="14" Foreground="{DynamicResource ColorBrush4}" Grid.Column="1" VerticalAlignment="Center" />
+                <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="2" />
+                </Grid>
+            </StackPanel>
+        </Border>
+        </StackPanel>
+    </Border>
+</StackPanel>
+
+<!-- 
+
+全部通用的属性：
+ - Width、Height：设置宽度与高度
+ - ToolTip：设置鼠标指向时的提示文本
+ - Background：调整背景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - Margin：调整外边距（格式为 左,上,右,下。例如 Margin="0,0,0,2" 即为 2 单位的下边距）
+
+TextBlock（纯文本）：
+ - Text：设置显示的文本（如果要使用引号等特殊字符，自行百度 XAML 转义）
+ - TextWrapping：开启自动换行
+ - FontSize：设置字号
+ - FontWeight：设置为 Bold 时，文字加粗
+ - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+Image（图片）：
+ - Source：要显示的图片的网址
+ - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+local:MyCard（卡片）：
+ - Title：设置显示的标题文本
+ - CanSwap：这张卡片是否可以折叠，True 为是，False 为否
+ - IsSwaped：这张卡片是否默认折叠，要求 CanSwap 必须为 True
+ - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）（使用时，CanSwap 属性需为 False）
+
+local:MyHint（提示条）：
+ - Text：设置显示的文本（&#xA; 代表换行）
+ - IsWarn：设置为 True 代表警告样式，False 代表提示样式
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+local:MyButton（按钮）：
+ - Text：设置显示的文本
+ - Padding：设置内边距，格式与 Margin 一致
+ - ColorType：设置颜色主题（Highlight 为当前启动器的主题颜色，Red 为红色，默认为黑色）
+ - EventType、EventData：触发特定事件
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+local:MyTextButton（文本按钮）：
+ - Text：设置显示的文本
+ - EventType、EventData：触发特定事件
+ - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+local:MyListItem（列表项）：
+ - Logo：列表项的图标（所指定的可以是链接也可以是文件路径）
+ - Title：列表项的大标题
+ - Info：列表项的详细信息，它将会以灰色显示在大标题下方
+ - Type：若留空仅单纯展示信息，设置为 Clickable 触发相应活动
+
+-->
