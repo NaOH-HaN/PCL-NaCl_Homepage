@@ -1,6 +1,9 @@
 ﻿<local:MyCard Title="快速操作" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
     <StackPanel Margin="25,40,23,15">
-        <!--快速启动-->
+        <!--
+        快速启动
+        由于还不会做自动获取版本并列出的方法，还得自己改一下版本号啦
+        -->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
