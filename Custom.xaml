@@ -12,7 +12,7 @@
             </Grid.ColumnDefinitions>
             <!-- 为按钮添加 Grid.Column 属性，删除 Width 与 HorizontalAlignment 属性 -->
             <local:MyButton Grid.Column="1" Margin="0,8,10,0" Height="35" Padding="13,0,13,0" ColorType="Highlight"
-                        Text="1.20.1" EventType="启动游戏" EventData="1.20.1-Fabric 0.14.21" />
+                        Text="1.20.1" EventType="启动游戏" EventData="1.20.1-Fabric 0.15.7" />
             <local:MyButton Grid.Column="0" Margin="0,8,10,0" Height="35" Padding="13,0,13,0" 
                         Text="Memories" EventType="启动游戏" EventData="1.12.2-Forge_Memories" />
             <local:MyButton Grid.Column="2" Margin="0,8,10,0" Height="35" Padding="13,0,13,0" 
