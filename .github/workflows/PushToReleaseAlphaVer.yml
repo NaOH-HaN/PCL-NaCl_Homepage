@@ -1,4 +1,4 @@
-name: Release on Tag
+name: Auto Release Alpha Ver
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     name: Release
+    if: startsWith(github.event.head_commit.message, '[Alpha]')
     runs-on: ubuntu-latest
 
     steps:
@@ -29,9 +30,10 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             Changes in this Release:
-            - Add your release notes here
+            - Github Actions Release
+            - [WARN]Alpha Version may be unstable, use with caution!
           draft: false
-          prerelease: false
+          prerelease: true
 
       - name: Upload files to the release
         id: upload-release-asset
