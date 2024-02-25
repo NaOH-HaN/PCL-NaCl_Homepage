@@ -1,0 +1,47 @@
+name: Auto Release Alpha Ver
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    name: Release
+    if: startsWith(github.event.head_commit.message, '[Alpha]')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'NaOH_HaN'
+          git config --global user.email '202352273@qq.com'
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release:
+            - Github Actions Release
+            - [WARN]Alpha Version may be unstable, use with caution!
+          draft: false
+          prerelease: true
+
+      - name: Upload files to the release
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: Custom.xaml RestartPCL2.bat RestartPCL2.vbs  # 上传想要发布的文件路径，不加仓库名
+          asset_name: Custom.xaml RestartPCL2.bat RestartPCL2.vbs  # 文件名
+          asset_content_type: application/octet-stream
