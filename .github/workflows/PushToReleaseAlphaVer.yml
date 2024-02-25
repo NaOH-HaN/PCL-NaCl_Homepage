@@ -15,6 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Get branch/tag name
+        id: extract_name
+        run: echo ::set-output name=name::${GITHUB_REF#refs/*/}
+
       - name: Set up Git
         run: |
           git config --global user.name 'NaOH_HaN'
@@ -26,8 +30,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Alpha ${{ github.ref }}
+          tag_name: ${{ steps.extract_name.outputs.name }}
+          release_name: Alpha ${{ steps.extract_name.outputs.name }}
           body: |
             Changes in this Release:
             - Github Actions Release
