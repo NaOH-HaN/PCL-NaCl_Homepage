@@ -211,7 +211,7 @@
         <StackPanel Margin="40,15,0,10">
         <TextBlock Text="PCL2 NaCl主页" FontSize="16" Margin="0,5,5,5" />
         <TextBlock Text="制作 | NaOH_HaN" />
-        <TextBlock Text="版本 | Alpha 0.5.2" />
+        <TextBlock Text="版本 | Alpha 0.5.3" />
         <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
             <TextBlock Text="Github: " />
             <local:MyTextButton Margin="0,0,0,0" 
