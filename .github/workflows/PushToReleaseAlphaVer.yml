@@ -46,6 +46,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Custom.xaml RestartPCL2.bat RestartPCL2.vbs  # 上传想要发布的文件路径，不加仓库名
-          asset_name: Custom.xaml RestartPCL2.bat RestartPCL2.vbs  # 文件名
+          asset_path: Custom.xaml, RestartPCL2.bat, RestartPCL2.vbs  # 上传想要发布的文件路径，不加仓库名
+          asset_name: Custom.xaml, RestartPCL2.bat, RestartPCL2.vbs  # 文件名
           asset_content_type: application/octet-stream
