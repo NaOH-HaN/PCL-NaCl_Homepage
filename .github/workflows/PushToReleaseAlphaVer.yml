@@ -26,8 +26,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Alpha ${{ github.ref }}
+          tag_name: ${{ github.ref.split('/')[2] }}
+          release_name: Alpha ${{ github.ref.split('/')[2] }}
           body: |
             Changes in this Release:
             - Github Actions Release
