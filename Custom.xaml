@@ -99,7 +99,7 @@
                     Logo="pack://application:,,,/images/Blocks/CommandBlock.png"
                     Title="刷新图片"
                     Info="该操作将通过 重启PCL2 的方式刷新图片"
-                    EventType="打开文件" EventData="(path}\PCL\RestartPCL2.vbs" Type="Clickable" />
+                    EventType="打开文件" EventData="{path}\PCL\RestartPCL2.vbs" Type="Clickable" />
         <local:MyHint Margin="0,0,0,0" Text="因技术性问题，刷新图片 将通过 重启PCL2 的方式实现！" />
     </StackPanel>
 </local:MyCard>
