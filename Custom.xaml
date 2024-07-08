@@ -161,6 +161,7 @@
     </StackPanel>
 </local:MyCard>
 
+<!--- 取消注释恢复卡片
 <local:MyCard Title="LittleSkin登录" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
     <StackPanel Margin="25,40,23,15">
                     <local:MyHint Margin="0,0,0,8"
@@ -177,9 +178,8 @@
                     EventType="复制文本" EventData="https://littleskin.cn/api/yggdrasil" Type="Clickable" />
     </StackPanel>
 </local:MyCard>
+-->
 
-<!--开发选项，移除下方注释标记启用-->
-<!--
 <local:MyCard Title="开发选项" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
     <StackPanel Margin="25,40,23,15">
         <local:MyHint Margin="0,0,0,5" Text="更改主页xaml后记得保存" />
@@ -203,7 +203,7 @@
         </StackPanel>
     </StackPanel>
 </local:MyCard>
--->
+
 
 <!--关于-->
 <StackPanel>
